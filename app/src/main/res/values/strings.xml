@@ -5,6 +5,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="info">Informações</string>
+    <string name="login">Login</string>
+    <string name="buscar">Buscar</string>
+    <string name="emailireserv">contato@joaofaro.eng.br</string>
     <string name="title_activity_informacoes">iReserv</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
