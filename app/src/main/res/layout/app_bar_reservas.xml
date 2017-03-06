@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.eng.joaofaro.ireserv.ReservasActivity">
+    tools:context="br.eng.joaofaro.ireserv.activities.ReservasActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
