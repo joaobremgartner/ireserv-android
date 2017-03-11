@@ -1,6 +1,5 @@
 package br.eng.joaofaro.ireserv.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,25 +12,60 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.eng.joaofaro.ireserv.R;
+import br.eng.joaofaro.ireserv.adapters.RestaurantesAdapter;
+import br.eng.joaofaro.ireserv.models.Estabelecimento;
 
 public class ReservasActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private List<Estabelecimento> estabelecimentos;
+    private Estabelecimento estabelecimento;
+
+    private ListView listaEstabelecimentos;
+    private Toolbar toolbarBottom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservas);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //TODO
+        toolbarBottom = (Toolbar) findViewById(R.id.inc_tb_bottom);
+        toolbarBottom.inflateMenu(R.menu.menu_toolbar_bottom);
+
+        //TESTE
+        this.listaEstabelecimentos = (ListView) findViewById(R.id.lista_cards);
+
+        this.estabelecimentos = new ArrayList<Estabelecimento>();
+
+        for (int i = 1; i < 10; i++) {
+            this.estabelecimento = new Estabelecimento();
+            estabelecimento.setId(new Long(i));
+            estabelecimento.setNome("Restaurante do João "+ i);
+            estabelecimento.setEndereco("Endereço "+ i);
+            estabelecimento.setNotaAvaliacao(4.3);
+            this.estabelecimentos.add(this.estabelecimento);
+
+        }
+
+        RestaurantesAdapter adapter = new RestaurantesAdapter(this, estabelecimentos);
+        this.listaEstabelecimentos.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, R.string.emailireserv, Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "TODO - mostrar reservas agendadas", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -58,7 +92,6 @@ public class ReservasActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.reservas, menu);
         return true;
     }
@@ -69,10 +102,15 @@ public class ReservasActivity extends AppCompatActivity
 
         switch (id) {
             case R.id.info:
-                Intent irParaInfo = new Intent(this, InformacoesActivity.class);
-                startActivity(irParaInfo);
-                Toast.makeText(this, "teste informações", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "TODO - informações do iReserv", Toast.LENGTH_LONG).show();
                 break;
+            case R.id.login:
+                Toast.makeText(this, "TODO - implementar tela de login e cadastro",
+                        Toast.LENGTH_LONG).show();
+                break;
+            case R.id.buscar:
+                Toast.makeText(this, "TODO - implementar a busca de restaurantes",
+                        Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);
@@ -81,16 +119,11 @@ public class ReservasActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.reservas) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.avaliacao) {
 
         } else if (id == R.id.nav_share) {
 
