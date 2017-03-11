@@ -9,7 +9,7 @@ import android.view.View;
 
 import br.eng.joaofaro.ireserv.R;
 
-public class InformacoesActivity extends AppCompatActivity {
+public class InformacoesRestaurantesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
