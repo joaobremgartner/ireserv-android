@@ -23,10 +23,12 @@
     </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
+        android:id="@+id/listview"
+        android:layout_above="@+id/inc_tb_bottom"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/app_bar">
+        android:layout_below="@+id/app_bar" >
 
         <ListView
             android:id="@+id/lista_cards"
@@ -35,11 +37,7 @@
             android:divider="@null"
             android:dividerHeight="0dp">
 
-    </ListView>
-
-        <include
-            android:id="@+id/inc_tb_bottom"
-            layout="@layout/toolbar_bottom"/>
+         </ListView>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
@@ -47,10 +45,15 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="58dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="@dimen/fab_margin"
             android:layout_gravity="bottom|end"
             android:src="@drawable/ic_reservas_branco" />
     </RelativeLayout>
+
+    <include
+        android:id="@+id/inc_tb_bottom"
+        layout="@layout/toolbar_bottom"/>
+
 </RelativeLayout>
