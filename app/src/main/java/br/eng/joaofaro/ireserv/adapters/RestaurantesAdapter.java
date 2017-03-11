@@ -55,12 +55,16 @@ public class RestaurantesAdapter extends BaseAdapter {
         if (listaCards == null) {
             listaCards = inflater.inflate(R.layout.content_reservas, parent, false);
         }
-        CardRestauranteHelper restauranteHelper = new CardRestauranteHelper(listaCards,
-                estabelecimento);
 
-        restauranteHelper.populaCardEstabelecimento();
-        restauranteHelper.trataEventoDeClique(restauranteHelper.getImagemCard());
+        setListeners(listaCards, estabelecimento);
 
         return listaCards;
+    }
+
+    private void setListeners(View view, Estabelecimento estabelecimento) {
+        CardRestauranteHelper restauranteHelper = new CardRestauranteHelper(view,
+                estabelecimento);
+        restauranteHelper.populaCardEstabelecimento();
+        restauranteHelper.trataEventoDeClique(restauranteHelper.getImagemCard());
     }
 }
