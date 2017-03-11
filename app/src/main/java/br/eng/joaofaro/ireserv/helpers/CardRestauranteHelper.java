@@ -6,6 +6,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import br.eng.joaofaro.ireserv.R;
+import br.eng.joaofaro.ireserv.listeners.ListaRestaurantesListener;
 import br.eng.joaofaro.ireserv.models.Estabelecimento;
 import br.eng.joaofaro.ireserv.utils.IreservUtils;
 
@@ -36,6 +37,8 @@ public class CardRestauranteHelper {
         nomeRestaurante.setText(estabelecimento.getNome());
         endRestaurante.setText(estabelecimento.getEndereco());
         rating.setRating((float) estabelecimento.getNotaAvaliacao());
+        imagemCard.setImageResource(R.drawable.mustang);
+        imagemCard.setScaleType(ImageView.ScaleType.FIT_XY);
 
         String notaFormatada = IreservUtils.formataAvaliacaoRestaurante(estabelecimento);
 
@@ -44,5 +47,9 @@ public class CardRestauranteHelper {
 
     public ImageView getImagemCard() {
         return imagemCard;
+    }
+
+    public void trataEventoDeClique(View view) {
+        view.setOnClickListener(new ListaRestaurantesListener());
     }
 }

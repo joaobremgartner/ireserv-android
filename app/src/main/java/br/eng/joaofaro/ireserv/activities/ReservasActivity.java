@@ -54,6 +54,7 @@ public class ReservasActivity extends AppCompatActivity
             estabelecimento.setNome("Restaurante do João "+ i);
             estabelecimento.setEndereco("Endereço "+ i);
             estabelecimento.setNotaAvaliacao(4.3);
+            estabelecimento.setImagemLogo(R.drawable.mustang);
             this.estabelecimentos.add(this.estabelecimento);
 
         }

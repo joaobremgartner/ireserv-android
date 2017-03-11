@@ -14,6 +14,7 @@ import java.util.List;
 import br.eng.joaofaro.ireserv.R;
 import br.eng.joaofaro.ireserv.activities.InformacoesRestaurantesActivity;
 import br.eng.joaofaro.ireserv.helpers.CardRestauranteHelper;
+import br.eng.joaofaro.ireserv.listeners.ListaRestaurantesListener;
 import br.eng.joaofaro.ireserv.models.Estabelecimento;
 
 /**
@@ -58,17 +59,7 @@ public class RestaurantesAdapter extends BaseAdapter {
                 estabelecimento);
 
         restauranteHelper.populaCardEstabelecimento();
-        ImageView imagemCard = restauranteHelper.getImagemCard();
-
-        //TODO
-        imagemCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(contexto, "Teste", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(contexto, InformacoesRestaurantesActivity.class);
-                contexto.startActivity(intent);
-            }
-        });
+        restauranteHelper.trataEventoDeClique(restauranteHelper.getImagemCard());
 
         return listaCards;
     }
