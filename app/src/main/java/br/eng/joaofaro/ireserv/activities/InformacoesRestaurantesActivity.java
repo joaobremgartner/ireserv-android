@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 
 import br.eng.joaofaro.ireserv.R;
 
@@ -17,6 +18,10 @@ public class InformacoesRestaurantesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_informacoes_ireserv);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Teste
+        ImageView imagemToolbar = (ImageView) findViewById(R.id.imagem_toolbar);
+        imagemToolbar.setImageResource(R.drawable.mustang);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
