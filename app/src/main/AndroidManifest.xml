@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.InformacoesActivity"
+            android:name=".activities.InformacoesRestaurantesActivity"
             android:label="@string/title_activity_informacoes"
             android:parentActivityName=".activities.ReservasActivity"
             android:theme="@style/AppTheme.NoActionBar">
