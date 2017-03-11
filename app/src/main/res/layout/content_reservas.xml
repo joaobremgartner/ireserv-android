@@ -24,8 +24,8 @@
             <ImageView
                 android:id="@+id/imagem_card"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:src="@color/cardview_dark_background"/>
+                android:src="@null"
+                android:layout_height="160dp" />
 
             <TextView
                 android:layout_marginLeft="2dp"

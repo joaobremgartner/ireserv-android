@@ -14,7 +14,7 @@ public class Estabelecimento implements Serializable {
     private String endereco;
     private double notaAvaliacao;
     private List<String> comentarios;
-    private String imagemLogo;
+    private int imagemLogo;
 
     public Long getId() {
         return id;
@@ -56,11 +56,11 @@ public class Estabelecimento implements Serializable {
         this.comentarios = comentarios;
     }
 
-    public String getImagemLogo() {
+    public int getImagemLogo() {
         return imagemLogo;
     }
 
-    public void setImagemLogo(String imagemLogo) {
+    public void setImagemLogo(int imagemLogo) {
         this.imagemLogo = imagemLogo;
     }
 }
