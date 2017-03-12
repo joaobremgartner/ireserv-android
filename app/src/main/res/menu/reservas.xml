@@ -9,15 +9,9 @@
         android:icon="@drawable/ic_search"
         app:showAsAction="collapseActionView|ifRoom" />
     <item
-        android:id="@+id/info"
-        android:orderInCategory="300"
-        android:title="@string/info"
-        android:icon="@drawable/ic_info"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/login"
+        android:id="@+id/atualizar"
         android:orderInCategory="200"
-        android:title="@string/login"
-        android:icon="@drawable/ic_account"
+        android:title="@string/atualizar"
+        android:icon="@drawable/ic_sync"
         app:showAsAction="always" />
 </menu>

@@ -41,7 +41,7 @@ public class ReservasActivity extends AppCompatActivity
 
         //TODO
         toolbarBottom = (Toolbar) findViewById(R.id.inc_tb_bottom);
-        toolbarBottom.inflateMenu(R.menu.menu_toolbar_bottom);
+        //toolbarBottom.inflateMenu(R.menu.menu_toolbar_bottom);
 
         //TESTE
         this.listaEstabelecimentos = (ListView) findViewById(R.id.lista_cards);
@@ -102,11 +102,8 @@ public class ReservasActivity extends AppCompatActivity
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.info:
-                Toast.makeText(this, "TODO - informações do iReserv", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.login:
-                Toast.makeText(this, "TODO - implementar tela de login e cadastro",
+            case R.id.atualizar:
+                Toast.makeText(this, "TODO - implementar o sincronismo com o servidor",
                         Toast.LENGTH_LONG).show();
                 break;
             case R.id.buscar:

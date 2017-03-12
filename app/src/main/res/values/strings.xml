@@ -8,7 +8,7 @@
 
     <!-- Menu - tela principal -->
     <string name="info">Informações</string>
-    <string name="login">Login</string>
+    <string name="atualizar">Atualizar</string>
     <string name="buscar">Buscar</string>
 
     <!-- Drawer -->
