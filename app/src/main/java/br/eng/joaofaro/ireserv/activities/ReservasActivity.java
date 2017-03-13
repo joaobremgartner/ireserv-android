@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import java.util.List;
 
 import br.eng.joaofaro.ireserv.R;
 import br.eng.joaofaro.ireserv.adapters.RestaurantesAdapter;
+import br.eng.joaofaro.ireserv.listeners.ToolbarBottomListener;
 import br.eng.joaofaro.ireserv.models.Estabelecimento;
 
 public class ReservasActivity extends AppCompatActivity
@@ -30,6 +32,7 @@ public class ReservasActivity extends AppCompatActivity
 
     private ListView listaEstabelecimentos;
     private Toolbar toolbarBottom;
+    private List<View> listaAcoesToolbarBottom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +41,19 @@ public class ReservasActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        this.listaAcoesToolbarBottom = new ArrayList<>();
 
         //TODO
         toolbarBottom = (Toolbar) findViewById(R.id.inc_tb_bottom);
-        //toolbarBottom.inflateMenu(R.menu.menu_toolbar_bottom);
+        ImageView login = (ImageView) findViewById(R.id.menu_bottom_profile);
+        ImageView favoritos = (ImageView) findViewById(R.id.menu_bottom_favoritos);
+        ImageView info = (ImageView) findViewById(R.id.menu_bottom_info);
+        ImageView configuracoes = (ImageView) findViewById(R.id.iv_settings);
+        this.listaAcoesToolbarBottom.add(login);
+        this.listaAcoesToolbarBottom.add(favoritos);
+        this.listaAcoesToolbarBottom.add(info);
+        this.listaAcoesToolbarBottom.add(configuracoes);
+        setListener(listaAcoesToolbarBottom);
 
         //TESTE
         this.listaEstabelecimentos = (ListView) findViewById(R.id.lista_cards);
@@ -132,5 +144,11 @@ public class ReservasActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void setListener(List<View> lista) {
+        for (View view:lista) {
+            view.setOnClickListener(new ToolbarBottomListener());
+        }
     }
 }
