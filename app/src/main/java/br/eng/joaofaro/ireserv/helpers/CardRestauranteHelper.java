@@ -5,6 +5,8 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import java.util.List;
+
 import br.eng.joaofaro.ireserv.R;
 import br.eng.joaofaro.ireserv.listeners.ListaRestaurantesListener;
 import br.eng.joaofaro.ireserv.models.Estabelecimento;
@@ -49,7 +51,9 @@ public class CardRestauranteHelper {
         return imagemCard;
     }
 
-    public void trataEventoDeClique(View view) {
-        view.setOnClickListener(new ListaRestaurantesListener());
+    public void trataEventoDeClique(List<View> lista, Estabelecimento estabelecimento) {
+        for (View view:lista) {
+            view.setOnClickListener(new ListaRestaurantesListener(estabelecimento));
+        }
     }
 }

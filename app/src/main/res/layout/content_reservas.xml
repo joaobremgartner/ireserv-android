@@ -55,7 +55,6 @@
 
             <RatingBar
                 android:numStars="5"
-                android:rating="4.3"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/texto_card_endereco"
                 android:layout_width="wrap_content"
