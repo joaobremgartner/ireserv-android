@@ -1,20 +1,16 @@
 package br.eng.joaofaro.ireserv.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.eng.joaofaro.ireserv.R;
-import br.eng.joaofaro.ireserv.activities.InformacoesRestaurantesActivity;
 import br.eng.joaofaro.ireserv.helpers.CardRestauranteHelper;
-import br.eng.joaofaro.ireserv.listeners.ListaRestaurantesListener;
 import br.eng.joaofaro.ireserv.models.Estabelecimento;
 
 /**
@@ -62,9 +58,11 @@ public class RestaurantesAdapter extends BaseAdapter {
     }
 
     private void setListeners(View view, Estabelecimento estabelecimento) {
+        List<View> listaDeViews = new ArrayList<>();
         CardRestauranteHelper restauranteHelper = new CardRestauranteHelper(view,
                 estabelecimento);
         restauranteHelper.populaCardEstabelecimento();
-        restauranteHelper.trataEventoDeClique(restauranteHelper.getImagemCard());
+        listaDeViews.add(restauranteHelper.getImagemCard());
+        restauranteHelper.trataEventoDeClique(listaDeViews, estabelecimento);
     }
 }

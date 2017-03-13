@@ -20,9 +20,18 @@
 
     <string name="emailireserv">contato@joaofaro.eng.br</string>
     <string name="title_activity_informacoes">iReserv</string>
-    <string name="teste">Informações restaurantes aqui...</string>
+    <string name="teste">Nome do restaurante</string>
 
     <!-- Redes sociais -->
     <string name="action_facebook">Facebook</string>
     <string name="action_instagram">Instagram</string>
+
+    <!-- Tutoriais -->
+    <string name="titulo_compartilhamento">Compartilhamento</string>
+    <string name="conteudo_compartilhamento">Aqui você pode compartilhar a reserva em suas redes
+        sociais
+    </string>
+    <string name="titulo_actionmenu">Outras ações</string>
+    <string name="conteudo_actionmenu">Existem outras opções também, como: Cardápios, transportes
+        e ofertas</string>
 </resources>

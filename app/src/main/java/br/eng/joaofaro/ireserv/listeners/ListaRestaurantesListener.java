@@ -7,11 +7,18 @@ import android.widget.Toast;
 
 import br.eng.joaofaro.ireserv.R;
 import br.eng.joaofaro.ireserv.activities.InformacoesRestaurantesActivity;
+import br.eng.joaofaro.ireserv.models.Estabelecimento;
 
 /**
  * Created by joaofaro on 11/03/17.
  */
 public class ListaRestaurantesListener implements OnClickListener {
+
+    private final Estabelecimento estabelecimento;
+
+    public ListaRestaurantesListener(Estabelecimento estabelecimento) {
+        this.estabelecimento = estabelecimento;
+    }
 
     @Override
     public void onClick(View view) {
