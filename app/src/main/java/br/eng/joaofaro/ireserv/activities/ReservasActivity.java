@@ -17,12 +17,17 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import br.eng.joaofaro.ireserv.R;
 import br.eng.joaofaro.ireserv.adapters.RestaurantesAdapter;
+import br.eng.joaofaro.ireserv.conversores.ReservaConverter;
+import br.eng.joaofaro.ireserv.enums.StatusDaReserva;
 import br.eng.joaofaro.ireserv.listeners.ToolbarBottomListener;
 import br.eng.joaofaro.ireserv.models.Estabelecimento;
+import br.eng.joaofaro.ireserv.models.Reservas;
+import br.eng.joaofaro.ireserv.tasks.RecebeListaDeRestaurantes;
 
 public class ReservasActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -78,7 +83,18 @@ public class ReservasActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "TODO - mostrar reservas agendadas", Snackbar.LENGTH_LONG)
+                ReservaConverter converter = new ReservaConverter();
+                //Teste envio object json
+                Reservas reservas = new Reservas();
+                reservas.setId(1L);
+                reservas.setCodReserva("COD123");
+                reservas.setDtReserva(new Date());
+                reservas.setConfirmado(true);
+                reservas.setStatus(StatusDaReserva.R);
+                reservas.setEstabelecimento(null);
+                String json = converter.converteParaJson(reservas);
+
+                Snackbar.make(view, json, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -115,8 +131,7 @@ public class ReservasActivity extends AppCompatActivity
 
         switch (id) {
             case R.id.atualizar:
-                Toast.makeText(this, "TODO - implementar o sincronismo com o servidor",
-                        Toast.LENGTH_LONG).show();
+                new RecebeListaDeRestaurantes(this).execute();
                 break;
             case R.id.buscar:
                 Toast.makeText(this, "TODO - implementar a busca de restaurantes",
